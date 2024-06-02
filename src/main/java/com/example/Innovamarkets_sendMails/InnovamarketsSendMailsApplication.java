@@ -1,5 +1,6 @@
 package com.example.Innovamarkets_sendMails;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -7,17 +8,22 @@ import org.springframework.context.event.EventListener;
 
 import com.example.Innovamarkets_sendMails.service.SendMailsService;
 
+
 @SpringBootApplication
 public class InnovamarketsSendMailsApplication {
+	@Autowired
+	private SendMailsService sendMailsService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(InnovamarketsSendMailsApplication.class, args);
 	}
 
-	// Test send emails with the following data:
 	@EventListener(ApplicationReadyEvent.class)
-	public void sendMail() {
-		SendMailsService sendMailsService = new SendMailsService();
-		sendMailsService.sendMail("iheblazhary@gmail.com", "Test the send mails ", "Hello from the test");
+	public void triggerMail()  {
+		sendMailsService.sendMail("hamzahajmtir2002@gmail.com","iheblazhary@gmail.com",
+				"This is email subject",
+				"Hello iheb how are you ?");
+
 	}
+
 }
