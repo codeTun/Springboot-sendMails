@@ -17,7 +17,6 @@ public class SendMailsService {
         message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
-    
         mailSender.send(message);
     
         System.out.println("Mail sent to: " + to);
