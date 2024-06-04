@@ -18,12 +18,13 @@ public class InnovamarketsSendMailsApplication {
 		SpringApplication.run(InnovamarketsSendMailsApplication.class, args);
 	}
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void triggerMail()  {
-		sendMailsService.sendMail("hamzahajmtir2002@gmail.com","iheblazhary@gmail.com",
-				"This is email subject",
-				"Hello iheb how are you ?");
-
-	}
+	// @EventListener(ApplicationReadyEvent.class)
+	// public void triggerMail()  {
+		
+	// 	sendMailsService.sendMail("iheblazhary@gmail.com","hamzahajmtir2002@gmail.com",
+	// 			"This is email subject",
+	// 			"Hello iheb how are you ?");
+		
+	// }
 
 }
