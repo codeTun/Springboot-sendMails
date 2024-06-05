@@ -21,8 +21,10 @@ public class SendMailsController {
 
     @PostMapping("/send")
     public String sendMail(@RequestBody MailRequest mailRequest) {
-        sendMailsService.sendMail(mailRequest.getFrom(), mailRequest.getTo(), mailRequest.getSubject(),
-                mailRequest.getBody());
-        return "Mail sent to: " + mailRequest.getTo();
+        for (String recipient : mailRequest.getTo()) {
+            sendMailsService.sendMail(mailRequest.getFrom(), recipient, mailRequest.getSubject(),
+                    mailRequest.getBody());
+        }
+        return "Mail sent";
     }
 }
