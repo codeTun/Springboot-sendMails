@@ -4,10 +4,10 @@ COPY target/*.jar mail-service.jar
 
 EXPOSE 8085
 
-ENV MAIL_HOST=smtp.gmail.com
-ENV MAIL_PORT=587
-ENV MAIL_USERNAME=iheblazhary@gmail.com
-ENV MAIL_PASSWORD=dtpwjacvgseytoek
+ENV MAIL_HOST=
+ENV MAIL_PORT=
+ENV MAIL_USERNAME=
+ENV MAIL_PASSWORD=
 
 ENTRYPOINT ["java", "-jar", "mail-service.jar"]
 
